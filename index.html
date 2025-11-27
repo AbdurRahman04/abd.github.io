@@ -1,1 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Abdur Rahman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #005b96;
+      --primary-light: #e6f2ff;
+      --text: #222;
+      --muted: #666;
+      --border: #ddd;
+      --bg: #fafafa;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background-color: #ffffff;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Top nav */
+    .navbar {
+      border-bottom: 1px solid var(--border);
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .brand span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      border-color: var(--primary);
+    }
+
+    /* Layout */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+      gap: 2.5rem;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      border-right: 1px solid var(--border);
+      padding-right: 1.5rem;
+    }
+
+    .profile-card {
+      text-align: center;
+    }
+
+    .profile-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 1rem;
+      border: 4px solid var(--primary-light);
+    }
+
+    .name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .role {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-section {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .sidebar-section h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar-links {
+      list-style: none;
+      text-align: left;
+    }
+
+    .sidebar-links li {
+      margin-bottom: 0.3rem;
+    }
+
+    .tagline {
+      background-color: var(--primary-light);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      margin-top: 1.5rem;
+      text-align: left;
+    }
+
+    /* Main content */
+    .main {
+      padding-left: 0.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section p {
+      margin-bottom: 0.75rem;
+    }
+
+    .section h3 {
+      font-size: 1.05rem;
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .item {
+      margin-bottom: 0.75rem;
+    }
+
+    .item-title {
+      font-weight: 600;
+    }
+
+    .item-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    /* Small screen */
+    @media (max-width: 800px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-right: 0;
+        padding-bottom: 1.5rem;
+      }
+      .main {
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top navigation -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        Abdur Rahman <span>| Statistics</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#about" class="active">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main layout -->
+  <main class="container">
+    <!-- Left sidebar -->
+    <aside class="sidebar">
+      <div class="profile-card">
+        <!-- Replace profile.jpg with your own photo filename -->
+        <img src="profile.jpg" alt="Abdur Rahman" class="profile-photo" />
+        <div class="name">Abdur Rahman</div>
+        <div class="role">M.Sc. Applied Statistics, KFUPM</div>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>Links</h4>
+        <ul class="sidebar-links">
+          <li>
+            <a href="https://orcid.org/0009-0000-5439-3346" target="_blank"
+              >ORCID</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/AbdurRahman04" target="_blank"
+              >Github</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>Affiliation</h4>
+        <p>
+          Department of Mathematical Sciences<br />
+          King Fahd University of Petroleum and Minerals (KFUPM)<br />
+          Dhahran, Saudi Arabia
+        </p>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>Research Interests</h4>
+        <ul class="sidebar-links">
+          <li>Mortality modeling and forecasting</li>
+          <li>Geospatial statistics</li>
+          <li>Machine learning in demography</li>
+          <li>Survival analysis & statistical modeling</li>
+        </ul>
+      </div>
+
+      <div class="tagline">
+        I work on mortality modeling and forecasting, combining geospatial
+        statistics and machine learning, with applications to demographic and
+        public health problems.
+      </div>
+    </aside>
+
+    <!-- Right main content -->
+    <section class="main">
+      <!-- About -->
+      <section id="about" class="section">
+        <h2>About me</h2>
+        <p>
+          I am Abdur Rahman, a Master of Science student in Applied Statistics at
+          King Fahd University of Petroleum and Minerals (KFUPM), Dhahran,
+          Saudi Arabia. My thesis focuses on
+          <strong>Geospatial and Machine Learning Mortality Modeling of MENA Countries</strong>.
+        </p>
+        <p>
+          I completed my Bachelor of Science in Statistics from The Islamia
+          University of Bahawalpur, Pakistan, with a CGPA of 3.93/4.00. I am
+          broadly interested in mortality forecasting, geospatial methods, and
+          the integration of machine learning techniques in demography and
+          public health.
+        </p>
+      </section>
+
+      <!-- Research -->
+      <section id="research" class="section">
+        <h2>Research</h2>
+        <h3>Current thesis</h3>
+        <p>
+          <strong>Geospatial and Machine Learning Mortality Modeling of MENA
+          Countries</strong><br />
+          Combining traditional demographic models with modern machine learning
+          and geospatial methods to improve mortality modeling and forecasting
+          for countries in the MENA region.
+        </p>
+
+        <h3>Other interests</h3>
+        <ul>
+          <li>Control charts and statistical process monitoring in demography</li>
+          <li>Hybrid models combining classical mortality models and ML</li>
+          <li>Applications of generalized extreme value (GEV) distributions</li>
+        </ul>
+      </section>
+
+      <!-- Publications -->
+      <section id="publications" class="section">
+        <h2>Publications & Manuscripts</h2>
+
+        <div class="item">
+          <div class="item-title">
+            Water level forecasting in coastal cities using a hybrid deep learning approach.
+          </div>
+          <div class="item-meta">
+            Rahman, A., Omar, M. H., Mahmood, T., Abbas, N., Riaz, M., & Ramzan, N.
+            Science of The Total Environment, 1003, 180709, 2025.
+          </div>
+          <a
+            href="https://doi.org/10.1016/j.scitotenv.2025.180709"
+            target="_blank"
+            >https://doi.org/10.1016/j.scitotenv.2025.180709</a
+          >
+        </div>
+
+        <div class="item">
+          <div class="item-title">
+            On Designing EWMA Charts to Model Demographic Trends with Generalized Extreme Value Distribution.
+          </div>
+          <div class="item-meta">
+            Presented at IWSM 2025 Conference.
+          </div>
+          <a href="https://iwsm2025.ie/p52/" target="_blank">Conference link</a>
+        </div>
+
+        <h3>Submitted manuscripts</h3>
+        <ul>
+          <li>
+            Optimizing Demographic Surveillance using GEV Control Charts: An
+            Advanced Approach for Monitoring Fertility Trends.
+          </li>
+          <li>
+            A Generalized Extreme Value CUSUM Framework for Detecting Shifts in
+            Infant Mortality Trends: Advancing Public Health Surveillance.
+          </li>
+          <li>
+            Hybrid Residual Learners Framework for Mortality Forecasting:
+            Integrating Lee–Carter, Renshaw–Haberman and Machine Learning
+            Models in the MENA Region.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Teaching / Experience -->
+      <section id="teaching" class="section">
+        <h2>Teaching & Experience</h2>
+
+        <div class="item">
+          <div class="item-title">R Language Lab Instructor</div>
+          <div class="item-meta">
+            King Fahd University of Petroleum & Minerals (KFUPM) — Aug 2024 – Present
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">Python Language Lab Instructor</div>
+          <div class="item-meta">
+            KFUPM — Jan 2024 – Jun 2024
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">Teaching Assistant</div>
+          <div class="item-meta">
+            KFUPM — Oct 2023 – Jan 2024
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">Lister (Data Collector)</div>
+          <div class="item-meta">
+            Planning & Development Board, Lahore, Pakistan — Apr 2022 – Jun 2022
+          </div>
+        </div>
+
+        <h3>Selected term projects</h3>
+        <ul>
+          <li>
+            Evaluating Optimal Techniques for Data Fitting and Forecasting:
+            Identifying the Best Approach for Accurate Energy Consumption
+            Prediction using machine learning approaches.
+            <a href="https://shorturl.at/nyc44" target="_blank">Project link</a>
+          </li>
+          <li>
+            Statistical Analysis of Imbalanced Classification with Training Size
+            Variation and Subsampling on Datasets of Research Papers in
+            Biomedical Literature.
+            <a href="https://shorturl.at/b2vp7" target="_blank">Project link</a>
+          </li>
+          <li>
+            Completely Randomized Block Design for Evaluating the Impact of
+            Parental Satisfaction, Absenteeism, and Subject Choice on Student
+            Performance with Gender as a Blocking Factor.
+            <a href="https://shorturl.at/zF0hA" target="_blank">Project link</a>
+          </li>
+        </ul>
+
+        <h3>Conferences</h3>
+        <ul>
+          <li>
+            Poster Presenter, IWSM 2025 — 39th International Workshop on
+            Statistical Modelling, Limerick, Ireland.
+          </li>
+          <li>
+            Participant: GSR Conference 2025 — 3-day international conference on
+            disruptive technologies.
+          </li>
+          <li>
+            Participant: Math Connect 2024 — 3-day conference on statistical and
+            mathematical methods.
+          </li>
+        </ul>
+      </section>
+
+      <!-- CV section -->
+      <section id="cv" class="section">
+        <h2>Curriculum Vitae</h2>
+        <p>
+          You can download my full CV here:
+          <a href="Abdur_Rahman_CV.pdf" target="_blank">Download CV (PDF)</a>
+        </p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>
+          For academic or research-related inquiries, please feel free to
+          contact me via email (institutional email here) or through my GitHub
+          and ORCID profiles linked on the left.
+        </p>
+        <p>
+          <strong>Referees</strong> and detailed contact information are
+          available in my CV.
+        </p>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
 
