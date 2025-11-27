@@ -10,16 +10,15 @@
 
   <style>
     :root {
-      --bg: #0f172a;
-      --primary: #2563eb;
+      --bg: #f3f4f6;
+      --primary: #1d4ed8;
       --primary-soft: #e0edff;
       --card-bg: #ffffff;
-      --text: #0f172a;
+      --text: #111827;
       --muted: #6b7280;
       --border: #e5e7eb;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.18);
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
       --radius-lg: 18px;
-      --radius-md: 12px;
     }
 
     * {
@@ -31,7 +30,7 @@
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-      background: radial-gradient(circle at top left, #1e293b, #020617);
+      background: linear-gradient(to bottom, #e5e7eb, #f9fafb);
       color: var(--text);
       min-height: 100vh;
     }
@@ -52,9 +51,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-inner {
@@ -66,10 +65,16 @@
       justify-content: space-between;
     }
 
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
     .brand {
       font-weight: 700;
       font-size: 1.35rem;
-      color: #e5e7eb;
+      color: #111827;
       display: flex;
       align-items: center;
       gap: 0.4rem;
@@ -81,20 +86,20 @@
 
     .brand-tagline {
       font-size: 0.8rem;
-      color: #9ca3af;
+      color: var(--muted);
     }
 
     .nav-links {
       display: flex;
-      gap: 1.4rem;
+      gap: 1rem;
       font-size: 0.95rem;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
 
     .nav-links a {
-      color: #e5e7eb;
-      padding: 0.4rem 0.75rem;
+      color: #111827;
+      padding: 0.35rem 0.9rem;
       border-radius: 999px;
       border: 1px solid transparent;
       transition: all 0.18s ease-out;
@@ -102,15 +107,15 @@
     }
 
     .nav-links a:hover {
-      border-color: rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.8);
+      border-color: var(--border);
+      background: #f3f4ff;
     }
 
     .nav-links a.active {
-      background: linear-gradient(135deg, #2563eb, #38bdf8);
-      border-color: transparent;
+      background: var(--primary);
+      border-color: var(--primary);
       color: #f9fafb;
-      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.55);
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.3);
     }
 
     /* MAIN LAYOUT */
@@ -123,19 +128,19 @@
 
     .container {
       display: grid;
-      grid-template-columns: 300px minmax(0, 1fr);
+      grid-template-columns: 290px minmax(0, 1fr);
       gap: 2rem;
     }
 
     /* SIDEBAR CARD */
 
     .sidebar {
-      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      background: var(--card-bg);
       border-radius: var(--radius-lg);
       padding: 2rem 1.75rem 1.9rem;
-      color: #e5e7eb;
+      color: #111827;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      border: 1px solid var(--border);
     }
 
     .profile-photo-wrapper {
@@ -145,26 +150,26 @@
     }
 
     .sidebar img {
-      width: 185px;
-      height: 185px;
-      border-radius: 26px;
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
       object-fit: cover;
-      border: 3px solid rgba(191, 219, 254, 0.85);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.8);
+      border: 3px solid #e5edff;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.18);
     }
 
     .name {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
       text-align: center;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.15rem;
     }
 
     .role {
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       text-align: center;
-      color: #9ca3af;
-      margin-bottom: 1rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
     }
 
     .pill {
@@ -172,12 +177,12 @@
       align-items: center;
       gap: 0.35rem;
       font-size: 0.8rem;
-      background: rgba(15, 118, 110, 0.15);
+      background: var(--primary-soft);
       border-radius: 999px;
-      padding: 0.25rem 0.65rem;
-      color: #a5f3fc;
-      border: 1px solid rgba(34, 211, 238, 0.35);
-      margin: 0 auto 1.4rem;
+      padding: 0.25rem 0.7rem;
+      color: #1e3a8a;
+      border: 1px solid #bfdbfe;
+      margin: 0 auto 1.2rem;
     }
 
     .pill span {
@@ -185,20 +190,20 @@
     }
 
     .side-section {
-      margin-top: 1.35rem;
+      margin-top: 1.25rem;
       font-size: 0.9rem;
     }
 
     .side-section h4 {
       font-size: 0.78rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #9ca3af;
+      color: var(--muted);
       margin-bottom: 0.55rem;
     }
 
     .affiliation {
-      color: #e5e7eb;
+      color: #111827;
       line-height: 1.5;
     }
 
@@ -212,64 +217,95 @@
       display: flex;
       align-items: center;
       gap: 0.35rem;
+      color: #111827;
     }
 
     .side-list li::before {
       content: "•";
-      color: #60a5fa;
+      color: var(--primary);
     }
 
-    /* CONTACT IN SIDEBAR */
+    /* CONTACT + SOCIAL ICONS */
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
       margin-bottom: 0.4rem;
       font-size: 0.9rem;
-      color: #e5e7eb;
+      color: #111827;
     }
 
     .contact-icon {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.75);
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #eef2ff;
+      border: 1px solid #c7d2fe;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      color: #1e3a8a;
     }
 
     .contact-item a {
-      color: #e5e7eb;
+      color: #111827;
       text-decoration: none;
       word-break: break-all;
     }
 
     .contact-item a:hover {
-      color: #bfdbfe;
+      color: var(--primary);
       text-decoration: underline;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: #111827;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #1f2937;
+      text-decoration: none;
+    }
+
+    .social-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: #f9fafb;
+    }
+
+    .social-icon:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
     }
 
     .cv-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
-      margin-top: 0.85rem;
-      padding: 0.5rem 0.85rem;
+      gap: 0.35rem;
+      margin-top: 0.9rem;
+      padding: 0.45rem 0.85rem;
       border-radius: 999px;
-      border: 1px solid rgba(191, 219, 254, 0.9);
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(59, 130, 246, 0.25));
-      color: #e5e7eb;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      color: #111827;
       font-size: 0.86rem;
       font-weight: 500;
     }
 
     .cv-button:hover {
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(59, 130, 246, 0.4));
+      background: #e5e7eb;
       text-decoration: none;
     }
 
@@ -278,32 +314,21 @@
     .main {
       background: var(--card-bg);
       border-radius: var(--radius-lg);
-      padding: 2.2rem 2rem 2.4rem;
+      padding: 2.1rem 2rem 2.4rem;
       box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.32);
+      border: 1px solid var(--border);
       min-height: 320px;
     }
 
     .section {
-      margin-bottom: 2.3rem;
+      margin-bottom: 2.2rem;
     }
 
     .section h2 {
-      font-size: 1.7rem;
-      margin-bottom: 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .section h2 span.badge {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--primary);
-      background: var(--primary-soft);
-      border-radius: 999px;
-      padding: 0.15rem 0.6rem;
+      font-size: 1.6rem;
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+      color: #111827;
     }
 
     .section p {
@@ -315,8 +340,8 @@
 
     .section h3 {
       font-size: 1.05rem;
-      margin-top: 1.1rem;
-      margin-bottom: 0.45rem;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
       color: #111827;
     }
 
@@ -406,11 +431,13 @@
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="nav-inner">
-    <div>
+    <div class="brand-block">
       <div class="brand">
         Abdur Rahman <span>| Statistics</span>
       </div>
-      <div class="brand-tagline">Mortality modeling · Geospatial statistics · Machine learning</div>
+      <div class="brand-tagline">
+        Mortality modelling · Geospatial statistics · Machine learning
+      </div>
     </div>
 
     <nav class="nav-links">
@@ -432,7 +459,7 @@
         <img src="profile.jpg" alt="Abdur Rahman" />
       </div>
 
-      
+      <div class="name">Abdur Rahman</div>
       <div class="role">M.Sc. Applied Statistics · KFUPM</div>
 
       <div class="pill">
@@ -442,26 +469,32 @@
       <div class="side-section">
         <h4>Contact</h4>
         <div class="contact-item">
-          <div class="contact-icon">📧</div>
+          <div class="contact-icon">✉</div>
           <a href="mailto:g202311930@kfupm.edu.sa">g202311930@kfupm.edu.sa</a>
         </div>
-        <div class="contact-item">
-          <div class="contact-icon">🔗</div>
-          <a href="https://www.linkedin.com/in/abdur-rahman-8aa0a914a/" target="_blank">
-            LinkedIn /abdur-rahman-8aa0a914a
+
+        <!-- Social icons only (no text labels) -->
+        <div class="social-row">
+          <!-- LinkedIn -->
+          <a class="social-icon" href="https://www.linkedin.com/in/abdur-rahman-8aa0a914a/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.09h4.36V24H.32V8.09zM8.34 8.09h4.18v2.16h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.36v-8.16c0-1.95-.03-4.45-2.71-4.45-2.71 0-3.13 2.12-3.13 4.31V24H8.34V8.09z"/>
+            </svg>
           </a>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <span>Dhahran, Saudi Arabia</span>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🧬</div>
-          <a href="https://orcid.org/0009-0000-5439-3346" target="_blank">ORCID Profile</a>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🐙</div>
-          <a href="https://github.com/AbdurRahman04" target="_blank">GitHub /AbdurRahman04</a>
+
+          <!-- GitHub -->
+          <a class="social-icon" href="https://github.com/AbdurRahman04" target="_blank" title="GitHub" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.11.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.37-3.88-1.37-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.71 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 2.9-.39c.98 0 1.96.13 2.88.39 2.22-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.09 0 4.44-2.69 5.41-5.25 5.7.41.36.77 1.07.77 2.16 0 1.56-.01 2.81-.01 3.19 0 .31.21.67.79.55A10.99 10.99 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
+            </svg>
+          </a>
+
+          <!-- ORCID -->
+          <a class="social-icon" href="https://orcid.org/0009-0000-5439-3346" target="_blank" title="ORCID" aria-label="ORCID">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm-2.21 6.01c.55 0 1 .45 1 1 0 .56-.45 1.01-1 1.01a1.01 1.01 0 1 1 0-2.02zM8.8 9.27h1.99v8.21H8.8V9.27zm3.62 0h3.84c2.02 0 3.29 1.35 3.29 3.41 0 2.13-1.27 3.52-3.29 3.52h-1.86v3.28h-1.98V9.27zm3.73 4.94c1.12 0 1.75-.68 1.75-1.78 0-1.09-.63-1.75-1.75-1.75h-1.75v3.53h1.75z"/>
+            </svg>
+          </a>
         </div>
 
         <a class="cv-button" href="Abdur_Rahman_CV.pdf" target="_blank">
@@ -481,11 +514,11 @@
       <div class="side-section">
         <h4>Research Interests</h4>
         <ul class="side-list">
-          <li>Mortality Modeling & Forecasting</li>
-          <li>Geospatial Statistics in Demography</li>
-          <li>Machine Learning and Deep Learning </li>
-          <li>Control Charts</li>
-          <li>Survival Analysis </li>
+          <li>Mortality modelling & forecasting</li>
+          <li>Geospatial statistics in demography</li>
+          <li>Machine learning and deep learning</li>
+          <li>Control charts and SPC</li>
+          <li>Survival analysis</li>
         </ul>
       </div>
     </aside>
@@ -496,7 +529,7 @@
       <!-- ABOUT TAB -->
       <div id="about-section" class="page-section active">
         <section class="section">
-        
+          <h2>About Me</h2>
           <p>
             I am Abdur Rahman, a Master of Science student in Applied Statistics at
             King Fahd University of Petroleum and Minerals (KFUPM), Dhahran,
@@ -505,10 +538,9 @@
           </p>
           <p>
             I completed my Bachelor of Science in Statistics from The Islamia
-            University of Bahawalpur, Pakistan. I am
-            broadly interested in mortality forecasting, geospatial methods, and
-            the integration of machine learning techniques in demography and
-            public health.
+            University of Bahawalpur, Pakistan. I am broadly interested in mortality
+            forecasting, geospatial methods, and the integration of machine learning
+            techniques in demography and public health.
           </p>
           <p>
             My current work combines traditional demographic models with
@@ -522,7 +554,7 @@
       <!-- RESEARCH TAB -->
       <div id="research-section" class="page-section">
         <section class="section">
-   
+          <h2>Research</h2>
 
           <h3>Current Thesis</h3>
           <p>
@@ -555,7 +587,7 @@
       <!-- PUBLICATIONS TAB -->
       <div id="publications-section" class="page-section">
         <section class="section">
-         
+          <h2>Publications</h2>
 
           <div class="item">
             <div class="item-title">
@@ -565,10 +597,7 @@
               Rahman, A., Omar, M. H., Mahmood, T., Abbas, N., Riaz, M., &amp; Ramzan, N.
               <em>Science of The Total Environment</em>, 1003, 180709, 2025.
             </div>
-            <a
-              href="https://doi.org/10.1016/j.scitotenv.2025.180709"
-              target="_blank"
-            >
+            <a href="https://doi.org/10.1016/j.scitotenv.2025.180709" target="_blank">
               https://doi.org/10.1016/j.scitotenv.2025.180709
             </a>
           </div>
@@ -606,7 +635,7 @@
       <!-- TEACHING TAB -->
       <div id="teaching-section" class="page-section">
         <section class="section">
-          
+          <h2>Teaching & Experience</h2>
 
           <h3>Academic Roles</h3>
           <div class="item">
@@ -681,18 +710,17 @@
       <!-- OTHER ACTIVITIES TAB -->
       <div id="activities-section" class="page-section">
         <section class="section">
-          
+          <h2>Other Activities</h2>
 
           <h3>Extracurricular Activities</h3>
 
           <div class="item">
             <div class="item-title">
-              KFUPM ISE Mega Football World Cup— Player (Qualifier Round)
+              KFUPM ISE Mega Football World Cup — Player (Qualifier Round)
             </div>
             <div class="item-meta">
               KFUPM, Dhahran · 2025
             </div>
-            
           </div>
 
           <div class="item">
@@ -702,7 +730,6 @@
             <div class="item-meta">
               Poster presentation · 2025
             </div>
-            
           </div>
 
           <div class="item">
@@ -712,7 +739,6 @@
             <div class="item-meta">
               College-level sports · 2015
             </div>
-            
           </div>
 
           <div class="item">
@@ -722,7 +748,6 @@
             <div class="item-meta">
               Block-level athletics · Bahawalpur Division · 2014
             </div>
-            
           </div>
 
           <div class="item">
@@ -732,7 +757,6 @@
             <div class="item-meta">
               Block-level football competition · Bahawalpur Division · 2012
             </div>
-         
           </div>
 
           <h3>Volunteer Work</h3>
@@ -744,7 +768,6 @@
             <div class="item-meta">
               KFUPM · 2024
             </div>
-           
           </div>
         </section>
       </div>
